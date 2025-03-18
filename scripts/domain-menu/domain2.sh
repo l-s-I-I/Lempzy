@@ -106,9 +106,9 @@ install_ssl() {
 
 # Install Wordpress
 install_wordpress() {
-     wget https://wordpress.org/latest.tar.gz
-     tar -xf latest.tar.gz
-     rm -f latest.tar.gz
+     wget https://wordpress.org/wordpress-6.7.2.tar.gz
+     tar -xf wordpress-6.7.2.tar.gz
+     rm -f wordpress-6.7.2.tar.gz
      mv wordpress $domain
      mv $domain /var/www/
      mv /var/www/$domain/wp-config-sample.php /var/www/$domain/wp-config.php
@@ -119,6 +119,7 @@ install_wordpress() {
      sed -i "s/' )/')/g" /var/www/$domain/wp-config.php
      sed -i "s/table_prefix =/table_prefix  =/g" /var/www/$domain/wp-config.php
 }
+
 
 # Delete themes & plugin from wordpress
 delete_default_plugin() {
